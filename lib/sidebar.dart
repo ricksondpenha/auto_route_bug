@@ -9,53 +9,57 @@ class SideBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: 200,
-        child: ListView(
-          children: [
-            _buildTile(
-              title: 'Dashboard',
-              onTap: () {
-                if (Responsive.isMobile(context)) context.popRoute();
-                context.tabsRouter.setActiveIndex(0);
-              },
-            ),
-            _buildExpandableTile(title: 'Catalog', children: [
+    return Material(
+      child: Container(
+          width: 200,
+          child: ListView(
+            children: [
               _buildTile(
-                title: 'Products',
+                title: 'Dashboard',
                 onTap: () {
                   if (Responsive.isMobile(context)) context.popRoute();
-                  context.navigateTo(CatalogRoute(children: [ProductsRoute()]));
+                  context.tabsRouter.setActiveIndex(0);
                 },
               ),
-              _buildTile(
-                title: 'Category',
-                onTap: () {
-                  if (Responsive.isMobile(context)) context.popRoute();
-                  context.navigateTo(CatalogRoute(children: [CategoryRoute()]));
-                },
-              ),
-            ]),
-            _buildExpandableTile(title: 'Orders', children: [
-              _buildTile(
-                title: 'Active Orders',
-                onTap: () {
-                  if (Responsive.isMobile(context)) context.popRoute();
-                  context
-                      .navigateTo(OrdersRoute(children: [ActiveOrdersRoute()]));
-                },
-              ),
-              _buildTile(
-                title: 'Pending Orders',
-                onTap: () {
-                  if (Responsive.isMobile(context)) context.popRoute();
-                  context
-                      .navigateTo(OrdersRoute(children: [PendingOrderRoute()]));
-                },
-              ),
-            ]),
-          ],
-        ));
+              _buildExpandableTile(title: 'Catalog', children: [
+                _buildTile(
+                  title: 'Products',
+                  onTap: () {
+                    if (Responsive.isMobile(context)) context.popRoute();
+                    context
+                        .navigateTo(CatalogRoute(children: [ProductsRoute()]));
+                  },
+                ),
+                _buildTile(
+                  title: 'Category',
+                  onTap: () {
+                    if (Responsive.isMobile(context)) context.popRoute();
+                    context
+                        .navigateTo(CatalogRoute(children: [CategoryRoute()]));
+                  },
+                ),
+              ]),
+              _buildExpandableTile(title: 'Orders', children: [
+                _buildTile(
+                  title: 'Active Orders',
+                  onTap: () {
+                    if (Responsive.isMobile(context)) context.popRoute();
+                    context.navigateTo(
+                        OrdersRoute(children: [ActiveOrdersRoute()]));
+                  },
+                ),
+                _buildTile(
+                  title: 'Pending Orders',
+                  onTap: () {
+                    if (Responsive.isMobile(context)) context.popRoute();
+                    context.navigateTo(
+                        OrdersRoute(children: [PendingOrderRoute()]));
+                  },
+                ),
+              ]),
+            ],
+          )),
+    );
   }
 
   Widget _buildTile({required String title, required Function onTap}) {
@@ -74,6 +78,7 @@ class SideBar extends StatelessWidget {
     required List<Widget> children,
   }) {
     return ExpansionTile(
+      initiallyExpanded: true,
       title: Text(
         title,
         maxLines: 1,
