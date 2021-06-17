@@ -22,6 +22,7 @@ class Home extends StatelessWidget {
             ? Scaffold(
                 drawer: SideBar(),
                 appBar: AppBar(
+                  title: Text(context.topRoute.path),
                   actions: [],
                 ),
                 body: child,
@@ -33,10 +34,7 @@ class Home extends StatelessWidget {
                   child: Scaffold(
                     appBar: AppBar(
                       title: !Responsive.isMobile(context)
-                          ? FlutterLogo(
-                              style: FlutterLogoStyle.horizontal,
-                              size: 100,
-                            )
+                          ? Text(context.topRoute.path)
                           : null,
                       centerTitle: false,
                       actions: [],
