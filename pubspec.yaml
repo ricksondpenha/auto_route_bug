@@ -1,0 +1,23 @@
+name: auto_route_bug
+description: A new Flutter project.
+
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  auto_route: ^2.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  auto_route_generator: ^2.1.0
+  build_runner:
+
+flutter:
+  uses-material-design: true
