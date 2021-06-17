@@ -5,7 +5,10 @@ class Category extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Category Page'));
+    return Container(
+      color: Colors.green[100],
+      child: Center(child: Text('Category Page')),
+    );
   }
 }
 
@@ -14,6 +17,9 @@ class Products extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Products Page'));
+    return Container(
+      color: Colors.amber[100],
+      child: Center(child: Text('Products Page')),
+    );
   }
 }

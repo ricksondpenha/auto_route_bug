@@ -5,7 +5,9 @@ class ActiveOrders extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Active Orders Page'));
+    return Container(
+        color: Colors.deepPurple[100],
+        child: Center(child: Text('Active Orders Page')));
   }
 }
 
@@ -14,6 +16,8 @@ class PendingOrders extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Pending Orders Page'));
+    return Container(
+        color: Colors.teal[100],
+        child: Center(child: Text('Pending Orders Page')));
   }
 }
